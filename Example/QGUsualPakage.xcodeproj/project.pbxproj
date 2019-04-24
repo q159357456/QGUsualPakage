@@ -23,6 +23,8 @@
 		6003F5BC195388D20070C39A /* Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F5BB195388D20070C39A /* Tests.m */; };
 		71719F9F1E33DC2100824A3D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */; };
 		772504722AABA1CFE136EEA0 /* Pods_QGUsualPakage_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FFD6B0ECC8457183D1159D0 /* Pods_QGUsualPakage_Example.framework */; };
+		7F580A862270719A005AA644 /* CommonUsePackaging.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F580A832270719A005AA644 /* CommonUsePackaging.m */; };
+		7F580A872270719A005AA644 /* ReplaceMe.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F580A842270719A005AA644 /* ReplaceMe.m */; };
 		873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 873B8AEA1B1F5CCA007FD442 /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
@@ -37,7 +39,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		17B55D7D35933D6E818E70F4 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		17B55D7D35933D6E818E70F4 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		4FFD6B0ECC8457183D1159D0 /* Pods_QGUsualPakage_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_QGUsualPakage_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		56EB329CCA63A8D2EE83FFBD /* Pods-QGUsualPakage_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QGUsualPakage_Example.release.xcconfig"; path = "Target Support Files/Pods-QGUsualPakage_Example/Pods-QGUsualPakage_Example.release.xcconfig"; sourceTree = "<group>"; };
 		6003F58A195388D20070C39A /* QGUsualPakage_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QGUsualPakage_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -60,10 +62,13 @@
 		6003F5BB195388D20070C39A /* Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Tests.m; sourceTree = "<group>"; };
 		606FC2411953D9B200FFA9A0 /* Tests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Tests-Prefix.pch"; sourceTree = "<group>"; };
 		71719F9E1E33DC2100824A3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		7F580A822270719A005AA644 /* CommonUsePackaging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonUsePackaging.h; sourceTree = "<group>"; };
+		7F580A832270719A005AA644 /* CommonUsePackaging.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommonUsePackaging.m; sourceTree = "<group>"; };
+		7F580A842270719A005AA644 /* ReplaceMe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReplaceMe.m; sourceTree = "<group>"; };
 		8533762A50CA21A19052CC9C /* Pods_QGUsualPakage_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_QGUsualPakage_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		873B8AEA1B1F5CCA007FD442 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		93E347F148C5ECAF0AD943A6 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
-		A0D8E2E55146B063B8E42E71 /* QGUsualPakage.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = QGUsualPakage.podspec; path = ../QGUsualPakage.podspec; sourceTree = "<group>"; };
+		93E347F148C5ECAF0AD943A6 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		A0D8E2E55146B063B8E42E71 /* QGUsualPakage.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = QGUsualPakage.podspec; path = ../QGUsualPakage.podspec; sourceTree = "<group>"; };
 		B66742DCC49D37D18A7521EF /* Pods-QGUsualPakage_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QGUsualPakage_Tests.release.xcconfig"; path = "Target Support Files/Pods-QGUsualPakage_Tests/Pods-QGUsualPakage_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		C4A309A2FFE46FF325D3C286 /* Pods-QGUsualPakage_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QGUsualPakage_Tests.debug.xcconfig"; path = "Target Support Files/Pods-QGUsualPakage_Tests/Pods-QGUsualPakage_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		F075FE90D2EAFE5D1CB94BF7 /* Pods-QGUsualPakage_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QGUsualPakage_Example.debug.xcconfig"; path = "Target Support Files/Pods-QGUsualPakage_Example/Pods-QGUsualPakage_Example.debug.xcconfig"; sourceTree = "<group>"; };
@@ -103,13 +108,14 @@
 				C4A309A2FFE46FF325D3C286 /* Pods-QGUsualPakage_Tests.debug.xcconfig */,
 				B66742DCC49D37D18A7521EF /* Pods-QGUsualPakage_Tests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
 		6003F581195388D10070C39A = {
 			isa = PBXGroup;
 			children = (
+				7F580A88227071A1005AA644 /* Assets */,
+				7F580A802270719A005AA644 /* Classes */,
 				60FF7A9C1954A5C5007DD14C /* Podspec Metadata */,
 				6003F593195388D20070C39A /* Example for QGUsualPakage */,
 				6003F5B5195388D20070C39A /* Tests */,
@@ -195,6 +201,25 @@
 				17B55D7D35933D6E818E70F4 /* LICENSE */,
 			);
 			name = "Podspec Metadata";
+			sourceTree = "<group>";
+		};
+		7F580A802270719A005AA644 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				7F580A822270719A005AA644 /* CommonUsePackaging.h */,
+				7F580A832270719A005AA644 /* CommonUsePackaging.m */,
+				7F580A842270719A005AA644 /* ReplaceMe.m */,
+			);
+			name = Classes;
+			path = ../QGUsualPakage/Classes;
+			sourceTree = "<group>";
+		};
+		7F580A88227071A1005AA644 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Assets;
+			path = ../QGUsualPakage/Assets;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -370,6 +395,8 @@
 			files = (
 				6003F59E195388D20070C39A /* QGAppDelegate.m in Sources */,
 				6003F5A7195388D20070C39A /* QGViewController.m in Sources */,
+				7F580A872270719A005AA644 /* ReplaceMe.m in Sources */,
+				7F580A862270719A005AA644 /* CommonUsePackaging.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

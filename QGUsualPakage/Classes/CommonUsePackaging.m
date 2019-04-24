@@ -9,7 +9,6 @@
 #import "CommonUsePackaging.h"
 #import <Photos/Photos.h>
 #import <AVFoundation/AVFoundation.h>
-#import "NSMutableDictionary+Order.h"
 #import <CommonCrypto/CommonDigest.h>
 #import <WebKit/WebKit.h>
 @interface CommonUsePackaging()<UINavigationControllerDelegate,UIImagePickerControllerDelegate>
@@ -369,57 +368,57 @@
 }
 
 //获得加密后的Url
-+(NSString*)getEncryptionSin
-{
-    NSMutableDictionary *dic = [CommonUsePackaging getFixedParamsDic];
-    NSMutableString * dataStr = [NSMutableString string];
-    //拼接(key)
-    BOOL first = YES;
-    for (NSString *key in dic.orderArray) {
-       
-        if (first) {
-           [dataStr appendString:[NSString stringWithFormat:@"%@=%@",key,dic[key]]];
-            first = NO;
-        }else
-        {
-           [dataStr appendString:[NSString stringWithFormat:@"&%@=%@",key,dic[key]]];
-        }
-    }
+//+(NSString*)getEncryptionSin
+//{
+//    NSMutableDictionary *dic = [CommonUsePackaging getFixedParamsDic];
+//    NSMutableString * dataStr = [NSMutableString string];
+//    //拼接(key)
+//    BOOL first = YES;
+//    for (NSString *key in dic.orderArray) {
+//
+//        if (first) {
+//           [dataStr appendString:[NSString stringWithFormat:@"%@=%@",key,dic[key]]];
+//            first = NO;
+//        }else
+//        {
+//           [dataStr appendString:[NSString stringWithFormat:@"&%@=%@",key,dic[key]]];
+//        }
+//    }
+//
+//    //获得MD5加密后的sig
+//    const char *cStr =[dataStr UTF8String];
+//    unsigned char result[16];
+//    CC_MD5(cStr, (CC_LONG)strlen(cStr), result);
+//    NSString *md5Str_new=[NSString stringWithFormat:
+//                          @"%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x",
+//                          result[0], result[1], result[2], result[3],
+//                          result[4], result[5], result[6], result[7],
+//                          result[8], result[9], result[10], result[11],
+//                          result[12], result[13], result[14], result[15]
+//                          ];
+//    NSLog(@"md5Str_new===>%@",[md5Str_new uppercaseString]);
+//    return[md5Str_new uppercaseString];
+//}
 
-    //获得MD5加密后的sig
-    const char *cStr =[dataStr UTF8String];
-    unsigned char result[16];
-    CC_MD5(cStr, (CC_LONG)strlen(cStr), result);
-    NSString *md5Str_new=[NSString stringWithFormat:
-                          @"%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x",
-                          result[0], result[1], result[2], result[3],
-                          result[4], result[5], result[6], result[7],
-                          result[8], result[9], result[10], result[11],
-                          result[12], result[13], result[14], result[15]
-                          ];
-    NSLog(@"md5Str_new===>%@",[md5Str_new uppercaseString]);
-    return[md5Str_new uppercaseString];
-}
-
-+(NSMutableDictionary*)getFixedParamsDic{
-    
-    NSMutableDictionary *dic = [NSMutableDictionary dictionary];
-    //随机数
-    int s =  (int)(100 + (arc4random() % (999 - 100 + 1)));
-    NSString * randomString = [NSString stringWithFormat:@"%d", s];
-    //时间戳
-    NSString * timeStamp = [CommonUsePackaging getNowTimeTimestamp];
-
-    //appkey
-    NSString *appkey = @"appKey_xbk";
-    //appsecret
-    NSString *appSecret = @"appsecret_xbk";
-    [dic orderSetObject:appkey forKey:@"appKey"];
-    [dic orderSetObject:randomString forKey:@"random"];
-    [dic orderSetObject:timeStamp forKey:@"timestamp"];
-    [dic orderSetObject:appSecret forKey:@"key"];
-    return dic;
-}
+//+(NSMutableDictionary*)getFixedParamsDic{
+//
+//    NSMutableDictionary *dic = [NSMutableDictionary dictionary];
+//    //随机数
+//    int s =  (int)(100 + (arc4random() % (999 - 100 + 1)));
+//    NSString * randomString = [NSString stringWithFormat:@"%d", s];
+//    //时间戳
+//    NSString * timeStamp = [CommonUsePackaging getNowTimeTimestamp];
+//
+//    //appkey
+//    NSString *appkey = @"appKey_xbk";
+//    //appsecret
+//    NSString *appSecret = @"appsecret_xbk";
+//    [dic orderSetObject:appkey forKey:@"appKey"];
+//    [dic orderSetObject:randomString forKey:@"random"];
+//    [dic orderSetObject:timeStamp forKey:@"timestamp"];
+//    [dic orderSetObject:appSecret forKey:@"key"];
+//    return dic;
+//}
 
 +(NSString *)getNowTimeTimestamp{
     
@@ -450,43 +449,43 @@
     return randomString;
 }
 /**获取加密后的Url 传参数dic*/
-+(NSString*)getEncryptionSinWithDic:(NSDictionary*)dic{
-    //key排序
-    NSArray *keyArray = [dic allKeys];
-    NSArray *sortArray = [keyArray sortedArrayUsingComparator:^NSComparisonResult(id  _Nonnull obj1, id  _Nonnull obj2) {
-        return [obj1 compare:obj2 options:NSNumericSearch];
-    }];
-    NSMutableArray *valueArray = [NSMutableArray array];
-    for (NSString *sortString in sortArray) {
-        [valueArray addObject:[dic objectForKey:sortString]];
-    }
-    NSMutableArray *signArray = [NSMutableArray array];
-    NSInteger lastKeyIndex = 0;
-    for (int i = 0; i < sortArray.count; i++) {
-        if ([sortArray[i] isEqualToString:signappKey_Key]) {
-            lastKeyIndex = i;
-            continue;
-        }
-        NSString *keyValueStr = [NSString stringWithFormat:@"%@=%@",sortArray[i],valueArray[i]];
-        [signArray addObject:keyValueStr];
-    }
-    NSString *sign = [signArray componentsJoinedByString:@"&"];
-    NSString *singMD5 = [sign stringByAppendingString:[NSString stringWithFormat:@"&%@=%@",sortArray[lastKeyIndex],valueArray[lastKeyIndex]]];
-    //获得MD5加密后的sig
-    const char *cStr =[singMD5 UTF8String];
-    unsigned char result[16];
-    CC_MD5(cStr, (CC_LONG)strlen(cStr), result);
-    NSString *md5Str_new=[NSString stringWithFormat:
-                          @"%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x",
-                          result[0], result[1], result[2], result[3],
-                          result[4], result[5], result[6], result[7],
-                          result[8], result[9], result[10], result[11],
-                          result[12], result[13], result[14], result[15]
-                          ];
-//    NSLog(@"md5Str_new===>%@",[md5Str_new uppercaseString]);
-    
-    return [NSString stringWithFormat:@"%@&sign=%@",sign,[md5Str_new uppercaseString]];
-}
+//+(NSString*)getEncryptionSinWithDic:(NSDictionary*)dic{
+//    //key排序
+//    NSArray *keyArray = [dic allKeys];
+//    NSArray *sortArray = [keyArray sortedArrayUsingComparator:^NSComparisonResult(id  _Nonnull obj1, id  _Nonnull obj2) {
+//        return [obj1 compare:obj2 options:NSNumericSearch];
+//    }];
+//    NSMutableArray *valueArray = [NSMutableArray array];
+//    for (NSString *sortString in sortArray) {
+//        [valueArray addObject:[dic objectForKey:sortString]];
+//    }
+//    NSMutableArray *signArray = [NSMutableArray array];
+//    NSInteger lastKeyIndex = 0;
+//    for (int i = 0; i < sortArray.count; i++) {
+//        if ([sortArray[i] isEqualToString:signappKey_Key]) {
+//            lastKeyIndex = i;
+//            continue;
+//        }
+//        NSString *keyValueStr = [NSString stringWithFormat:@"%@=%@",sortArray[i],valueArray[i]];
+//        [signArray addObject:keyValueStr];
+//    }
+//    NSString *sign = [signArray componentsJoinedByString:@"&"];
+//    NSString *singMD5 = [sign stringByAppendingString:[NSString stringWithFormat:@"&%@=%@",sortArray[lastKeyIndex],valueArray[lastKeyIndex]]];
+//    //获得MD5加密后的sig
+//    const char *cStr =[singMD5 UTF8String];
+//    unsigned char result[16];
+//    CC_MD5(cStr, (CC_LONG)strlen(cStr), result);
+//    NSString *md5Str_new=[NSString stringWithFormat:
+//                          @"%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x",
+//                          result[0], result[1], result[2], result[3],
+//                          result[4], result[5], result[6], result[7],
+//                          result[8], result[9], result[10], result[11],
+//                          result[12], result[13], result[14], result[15]
+//                          ];
+////    NSLog(@"md5Str_new===>%@",[md5Str_new uppercaseString]);
+//
+//    return [NSString stringWithFormat:@"%@&sign=%@",sign,[md5Str_new uppercaseString]];
+//}
 +(void)deletWebCache
 {
     NSSet *websiteDataTypes = [WKWebsiteDataStore allWebsiteDataTypes];
