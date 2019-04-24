@@ -1,0 +1,6 @@
+framework module QGUsualPakage {
+  umbrella header "QGUsualPakage-umbrella.h"
+
+  export *
+  module * { export * }
+}

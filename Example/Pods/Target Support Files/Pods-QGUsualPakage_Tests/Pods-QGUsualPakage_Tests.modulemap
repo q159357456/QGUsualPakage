@@ -1,0 +1,6 @@
+framework module Pods_QGUsualPakage_Tests {
+  umbrella header "Pods-QGUsualPakage_Tests-umbrella.h"
+
+  export *
+  module * { export * }
+}

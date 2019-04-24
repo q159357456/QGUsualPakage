@@ -1,0 +1,16 @@
+PODS:
+  - QGUsualPakage (0.1.0)
+
+DEPENDENCIES:
+  - QGUsualPakage (from `../`)
+
+EXTERNAL SOURCES:
+  QGUsualPakage:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  QGUsualPakage: c45d4bca532d29dd79af144057c00796d2062b5b
+
+PODFILE CHECKSUM: 280adaf17083190b584b22793f5f25edfa1f9c9a
+
+COCOAPODS: 1.6.0.beta.2

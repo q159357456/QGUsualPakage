@@ -1,0 +1,22 @@
+{
+  "name": "QGUsualPakage",
+  "version": "0.1.0",
+  "summary": "A short description of QGUsualPakage.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/290142650@qq.com/QGUsualPakage",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "290142650@qq.com": "290142650@qq.com"
+  },
+  "source": {
+    "git": "https://github.com/290142650@qq.com/QGUsualPakage.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "QGUsualPakage/Classes/**/*"
+}
