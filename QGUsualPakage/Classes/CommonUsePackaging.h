@@ -34,7 +34,7 @@
 //富文本
 +(NSMutableAttributedString*)getAttributes:(NSString*)str Color:(UIColor*)color;
 //获得加密后的Url
-+(NSString*)getEncryptionSin;
+//+(NSString*)getEncryptionSin;
 +(void)showSystemHint:(NSString*)hit;
 
 /**获取当前时间戳*/
@@ -42,7 +42,7 @@
 /**生成三位随机数*/
 +(NSString*)getRandomNumber;
 /**Url加签名 传参数dic 通用加密*/
-+(NSString*)getEncryptionSinWithDic:(NSDictionary*)dic;
+//+(NSString*)getEncryptionSinWithDic:(NSDictionary*)dic;
 //清除H5缓存
 +(void)deletWebCache;
 //字符串转NSDate

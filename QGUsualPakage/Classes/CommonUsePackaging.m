@@ -356,7 +356,7 @@
     for (int i =0; i<str.length; i++) {
         NSRange range = NSMakeRange(i, 1);
          temp =[str substringWithRange:range];
-         if ([temp isEqualToString:@"0"]|| [temp isEqualToString:@"1"]||[temp isEqualToString:@"2"]||[temp isEqualToString:@"3"]||[temp isEqualToString:@"4"]||[temp isEqualToString:@"5"]||[temp isEqualToString:@"6"]||[temp isEqualToString:@"7"]||[temp isEqualToString:@"8"]||[temp isEqualToString:@"9"]){
+        if ([temp isEqualToString:@"0"]|| [temp isEqualToString:@"1"]||[temp isEqualToString:@"2"]||[temp isEqualToString:@"3"]||[temp isEqualToString:@"4"]||[temp isEqualToString:@"5"]||[temp isEqualToString:@"6"]||[temp isEqualToString:@"7"]||[temp isEqualToString:@"8"]||[temp isEqualToString:@"9"]){
             [attribute addAttributes:[NSDictionary dictionaryWithObjectsAndKeys:color,NSForegroundColorAttributeName,[UIFont boldSystemFontOfSize:40],NSFontAttributeName, nil] range:range];
         }
             
