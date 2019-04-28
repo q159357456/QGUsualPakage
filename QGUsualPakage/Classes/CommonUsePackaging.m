@@ -511,4 +511,7 @@
     
     NSLog(@"版本测试");
 }
++(void)secondTest{
+    NSLog(@"secondTest");
+}
 @end
