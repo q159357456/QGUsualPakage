@@ -507,4 +507,8 @@
 {
     
 }
++(void)vesionTest{
+    
+    NSLog(@"版本测试");
+}
 @end
