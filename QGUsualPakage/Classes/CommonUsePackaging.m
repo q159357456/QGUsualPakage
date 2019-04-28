@@ -514,4 +514,8 @@
 +(void)secondTest{
     NSLog(@"secondTest");
 }
++(void)thirdTest{
+    
+    NSLog(@"ThirdTest");
+}
 @end
